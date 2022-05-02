@@ -1,0 +1,17 @@
+const http = require('http');
+
+const server = http.createServer((req,res)=>{
+if(req.url === '/'){
+    res.end('Welcome to homepage')
+}
+
+if(req.url === '/about'){
+    res.end('History')
+}
+res.end(`
+<p>error 404</p><br>
+<a href="/">go back home</a>`)
+
+})
+
+server.listen(5555)
